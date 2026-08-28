@@ -187,6 +187,37 @@ window.dispatchEvent(new Event('controller-open'));
 
 If you found this useful, please ⭐ [the repo](https://github.com/TheRiseCollection/controller-chat-plugin) and share where you found it!
 
+## Development
+
+```
+npm install
+npm run build      # vite build → dist/index.js
+```
+
+`prepublishOnly` runs the build, so `npm publish` cannot ship a stale `dist/`. React
+is a peer dependency — install it in the host app, not here, or you get two copies of
+React and hooks that fail at runtime for reasons that look nothing like the cause.
+
+## Decisions of record
+
+* **React is a peer dependency, never a dependency.** A component library that bundles
+  its own React puts a second copy in the consumer's tree, and the resulting hook
+  errors are among the hardest bugs to attribute. This is the single most important
+  line in `package.json`.
+
+* **The backend is optional.** Keyword-only mode works with no server at all, which
+  means the component can be dropped into a static site and evaluated in a minute.
+  Requiring an API key before anything renders is how integration components die
+  during evaluation.
+
+* **You supply the API URL; the component never hard-codes a provider.** It talks to
+  whatever endpoint you point it at — your own service, or a local Ollama running
+  Llama 3. Pinning a vendor into a UI component would make it a client for that
+  vendor rather than a chat surface.
+
+* **`prepublishOnly` builds.** The published artifact is `dist/`, which is not
+  committed; without that hook a publish from a clean checkout ships nothing.
+
 ## Credits
 
 By [THE RISE COLLECTION](https://www.therisecollection.co)
