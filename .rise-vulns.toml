@@ -1,0 +1,59 @@
+# Dependency audit allowlist for the rise-gate security step (QA hardening item 5, 11-20-2026).
+# Every HIGH/CRITICAL vulnerability open on 11-20-2026 is listed by id with where it is.
+# Each entry expires on 02-18-2027: upgrade or remove the dependency before then, or the gate fails.
+# A new HIGH/CRITICAL not listed here fails the gate immediately.
+
+[[allow]]
+id = "GHSA-28wg-ghj8-5hjv"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-2v37-7h3g-55p8"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-587h-7wmj-h5pm"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-68fv-2mgg-jv7q"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-6g55-p6wh-862q"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-73wf-gq98-2v4g"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-c2c7-rcm5-vvqj"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-c83g-rgw3-j3cx"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-p9ff-h696-f583"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-r28c-9q8g-f849"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
+
+[[allow]]
+id = "GHSA-xwg4-73v4-xw9w"
+reason = "Pre-existing on 11-20-2026 in package-lock.json"
+expires = 2027-02-18
